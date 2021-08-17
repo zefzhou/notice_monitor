@@ -29,9 +29,9 @@ async function getDingTalkNotice(datas){
     if(datas&&datas.length){
         const { exchange } = datas[0];
         var staticT = `#### 📣[${exchange}公告信息] \n>`;
-        const time = new Date();
-        const t = `#### 时间:${timeFormatter(time,false)}\n>`;
-        var handleData = staticT + t;
+        // const time = new Date();
+        // const t = `#### 时间:${timeFormatter(time,false)}\n>`;
+        var handleData = staticT;
         forEach(datas,l=>{
             const { type , title} = l;
             const i = `#### 类别:${type} 标题:${title}\n>`;

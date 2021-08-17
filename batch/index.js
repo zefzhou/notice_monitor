@@ -25,7 +25,7 @@ function getNoticeRowData(url,boxFiled,itemFiled,exchange,des){
                             const title = li;
                             const o = { type, exchange ,title };
                             result.push(o)
-                            console.log(i,li,'.....',exchange,des)
+                            // console.log(i,li,'.....',exchange,des)
                         }
                     })
                 }
