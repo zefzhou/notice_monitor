@@ -6,6 +6,7 @@ const forEach = require('lodash');
 const { getExchangeNotice ,getDingTalkNotice} = require('./../util/transform');
 const { sendMessage  } = require('./../dingTalk/index');
 const { testBot } = require('./../dingTalk/config');
+const { noop } = require('lodash');
 var result = [];
 var title = '监控信息推送';
 var sendMap = {};
@@ -47,6 +48,8 @@ function sendDing(board,exchange){
         }else if(sendMap[exchange].board!==board){
             sendMessage(title,testBot,board)
             sendMap[exchange].board = board
+        }else{
+            console.log('一小时以内没有新公告')
         }
     }
 }
@@ -79,8 +82,14 @@ function fetchNotice(datas){
     }, 10000);
 }
 
-fetchNotice(noticeConfig)
-// setTimeout(() => null, 22222222)
+// fetchNotice(noticeConfig)
+
+
+
+loop(noop=>fetchNotice(noticeConfig),1*60*1000);
+
+
+setTimeout(() => null, 22222222)
 
 
 module.exports = {
