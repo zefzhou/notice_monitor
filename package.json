@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.6",
+    "dingtalk-robot-sender": "^1.2.0",
+    "influxdb-nodejs": "^3.1.0",
+    "lodash": "^4.17.21",
+    "superagent": "^6.1.0"
+  }
+}
