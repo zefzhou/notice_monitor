@@ -1,9 +1,7 @@
-const addressMap = {
-    okex:'https://www.okex.com/support/hc/zh-cn/sections/360000030652-%E6%9C%80%E6%96%B0%E5%85%AC%E5%91%8A'
-}
+
 
 const intervalMap = [1,1.5,2];
-const keywords = ['维护','调整','现货','合约']
+const keywords = ['维护','调整','现货','合约','更新','接口','API','維護','調整','現貨','合約']
 
 const noticeConfig = [
     {
@@ -51,7 +49,7 @@ const noticeConfig = [
 ]
 
 module.exports = {
-    addressMap,
     intervalMap,
-    noticeConfig
+    noticeConfig,
+    keywords
 }

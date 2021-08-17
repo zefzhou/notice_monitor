@@ -23,7 +23,7 @@ async function sendMessage(title,webHook,board){
      .then((res) => {
          // TODO
          console.log(res.data, 'robot发送成功')
-     }).catch(e => logger.log('发送失败原因', e));
+     }).catch(e => console.log('发送失败原因', e));
 }
 
 module.exports = {
