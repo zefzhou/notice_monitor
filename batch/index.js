@@ -11,7 +11,7 @@ var result = [];
 var title = '监控信息推送';
 var sendMap = {};
 function getNoticeRowData(url,boxFiled,itemFiled,exchange,des){
-    console.log(url,boxFiled,itemFiled,exchange)
+    console.log(exchange,'fetch-start->',new Date().getTime())
     return new Promise((resolve,reject)=>{
         request.get(url).end((err,res)=>{
             if(err) return '数据请求失败';
@@ -49,7 +49,7 @@ function sendDing(board,exchange){
             sendMessage(title,testBot,board)
             sendMap[exchange].board = board
         }else{
-            console.log('一小时以内没有新公告')
+            console.log(exchange,': 2小时以内没有新公告')
         }
     }
 }
@@ -86,7 +86,7 @@ function fetchNotice(datas){
 
 
 
-loop(noop=>fetchNotice(noticeConfig),1*60*1000);
+loop(noop=>fetchNotice(noticeConfig),2 * 60 * 60 * 1000);
 
 
 setTimeout(() => null, 22222222)
