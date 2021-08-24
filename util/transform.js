@@ -124,7 +124,7 @@ async function getDingTalkNoticeHuoi(datas,exchange){
         var handleData = staticT;
         forEach(datas,l=>{
             const { type,com_type,com_statu} = l;
-            if(com_statu!=='运'){
+            if(com_statu!=='运行'){
                 if(type==='plan'){
                     const { started_at } = l;
                     const i = `#### 事件名:${com_type} 状态:${com_statu} 类型:${'维护计划'} 开始时间:${timeFormatter(new Date(started_at),false)}\n>`;

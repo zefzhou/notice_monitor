@@ -13,6 +13,7 @@ async function getDatas(){
     forEach( exchangeNoticeList , async l=>{
         var { exchange ,url } = l;
         const datas = await request(url)
+        console.log(datas,exchange)
         if(exchange==='OKEX'&&datas){
             const {serviceType,system,state } = l;
             const rowDatas = await transformOkexStatusInfo(datas,serviceType,system,state);
@@ -29,24 +30,24 @@ async function getDatas(){
         }else if(exchange==='HUOBI'){
             const {com_name,com_status,eve_status,indicator } = l;
             const rowDatas = await transformHuobiStatusInfo(datas,com_name,com_status,eve_status,indicator);
+            console.log(rowDatas,'boarderboarder')
             if(rowDatas&&rowDatas.length>0){
                 const boarde = await getDingTalkNoticeHuoi(rowDatas,exchange);
                 if(boarde.length>25){
                     if(!sendMap[exchange]){
                         sendMessage(title,testBot,boarde)
                         sendMap[exchange] = n;
-                    }else if(n-sendMap[exchange]>  60 * 1000){
+                    }else if(n-sendMap[exchange]>1 * 60 * 60 * 1000){
                         sendMessage(title,testBot,boarde)
                         sendMap[exchange] = n;
                     }
                 }
-                console.log(boarde.length,'boarderboarder')
             }
+            console.log(rowDatas)
         }
     })
 }
 
-// getDatas()
 
 module.exports = {
     getDatas
