@@ -30,7 +30,6 @@ async function getDatas(){
         }else if(exchange==='HUOBI'){
             const {com_name,com_status,eve_status,indicator } = l;
             const rowDatas = await transformHuobiStatusInfo(datas,com_name,com_status,eve_status,indicator);
-            console.log(rowDatas,'boarderboarder')
             if(rowDatas&&rowDatas.length>0){
                 const boarde = await getDingTalkNoticeHuoi(rowDatas,exchange);
                 if(boarde.length>25){
@@ -43,7 +42,6 @@ async function getDatas(){
                     }
                 }
             }
-            console.log(rowDatas)
         }
     })
 }

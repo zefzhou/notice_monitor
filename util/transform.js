@@ -116,7 +116,6 @@ async function transformHuobiStatusInfo(datas,com_name,com_status,eve_status){
 
 
 async function getDingTalkNoticeHuoi(datas,exchange){
-    console.log(exchange,'...')
     if(datas&&datas.length){
         var staticT = `#### 📣[${exchange}系统信息] \n>`;
         // const time = new Date();
