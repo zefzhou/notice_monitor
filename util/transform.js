@@ -1,7 +1,6 @@
 
 const { transform } = require('lodash');
 const forEach = require('lodash/forEach');
-const { data } = require('_cheerio@1.0.0-rc.10@cheerio/lib/api/attributes');
 
 async function getExchangeNotice(exchangeNotice,exchangeType){
     var handleData = [];
