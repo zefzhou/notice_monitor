@@ -1,7 +1,7 @@
 
 
 const intervalMap = [1,1.5,2];
-const keywords = ['下线','上线','上線','下線','暂停']
+const keywords = ['下线','下線']
 
 const noticeConfig = [
     {
