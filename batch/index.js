@@ -17,7 +17,7 @@ function getNoticeRowData(url,boxFiled,itemFiled,exchange,des){
             if(err) return '数据请求失败';
             const $ = cheerio.load(res.text);
             $(boxFiled).each((i,v)=>{
-                if(i<=5){
+                if(i<=10){
                     var li = exchange==='BINANCE'?$(v).text().trim():$(v).find(itemFiled).text().trim();
                     keywords.map(l=>{
                         if(li.indexOf(l)!==-1){
