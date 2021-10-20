@@ -1,7 +1,7 @@
 const { fetchDefiLlamaChainsDatasTop15 } = require('./fetch');
 
 function loop(fn, time) {
-    console.log('fetch---satrt',new Date());
+    console.log('<--fetch satrt-->',new Date());
     fn();
     setTimeout(() => loop(fn, time), time);
 }
