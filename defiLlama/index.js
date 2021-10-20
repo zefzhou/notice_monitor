@@ -6,7 +6,7 @@ function loop(fn, time) {
     setTimeout(() => loop(fn, time), time);
 }
 
-loop(noop=>fetchDefiLlamaChainsDatasTop15(), 2 * 60 * 1000);
+loop(noop=>fetchDefiLlamaChainsDatasTop15(), 10 * 60 * 1000);
 
 
 setTimeout(() => null, 22222222)
