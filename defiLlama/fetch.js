@@ -16,8 +16,8 @@ async function fetchDefiLlamaChainsDatasTop15(){
             const res = await request(url);
             const chainsDatas = await TransDefiChainsRowsDatas(res,name);
             const { Up2Standard ,day1Change ,day7Change} = chainsDatas;
-            console.log(chainsDatas,'chains...')
             if(Up2Standard){
+                console.log(chainsDatas,'chains...')
                 const board = await getDingTalk2Chains(Up2Standard ,day1Change ,day7Change ,name);
                 if(!sendMap[name]){
                     console.log('第一次发送',name)
