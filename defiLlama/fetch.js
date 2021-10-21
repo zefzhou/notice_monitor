@@ -25,7 +25,7 @@ async function fetchDefiLlamaChainsDatasTop15(){
                     await sendMessage(title,defiLlamaZS,board);
                     sendMap[name] = {};
                     sendMap[name].time = new Date().getTime();
-                }else if(new Date().getTime()-sendMap[name].time>= 1 * 60 * 60 * 1000){
+                }else if(new Date().getTime()-sendMap[name].time>= 12 * 60 * 60 * 1000){
                     console.log('后续1h一次发送',name)
                     await sendMessage(title,defiLlamaNB,board);
                     await sendMessage(title,defiLlamaZS,board);
